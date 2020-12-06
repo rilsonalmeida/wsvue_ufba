@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="data_binding">
+
+
+        <h1 v-bind:title="tagMessage"> {{ title }}</h1>
+        <br>
+        <h3>1. Interpolação (String, objeto)</h3>
+        <p>Autoria: {{ person.author }} @{{ person.company }}</p>
+
+        <br>
+        <h3>2. HTML (tags com a diretiva v-html)</h3>
+        <span v-html="tag"></span>
+
+        <br>
+        <br>
+        <h3>3. Atributos (tags com a diretiva v-bind)</h3>
+        <p>Verifique o título da página (tagMessage)</p>        
+
+        <br>
+        <h3>4. Expressões JavaScript</h3>
+        <p>Ex: Título da página modificado (uppercase): {{ title.toUpperCase() }}</h1>        
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        new Vue({
+            el: '#data_binding',
+            data: {
+                title: 'Passagem de Dados no Vue' ,
+                person: {
+                    author: 'Rilson',
+                    company: 'TRE-BA'
+                },
+            tag: '<button>Clique aqui</button>',
+            tagMessage: 'Maneiras de realizar data binding no Vue'
+            }
+        })
+
+    </script>
+
+</body>
+</html>
+
